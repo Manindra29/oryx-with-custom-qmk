@@ -15,6 +15,7 @@ enum custom_keycodes {
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  // Base Layer
   [0] = LAYOUT_ergodox_pretty(
     // left hand                                                   // right hand
     KC_GRAVE, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MINS, KC_EQL,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
@@ -27,10 +28,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                      TT(1),        KC_PGUP,
                                KC_SPC,    KC_LGUI,    TT(1),       KC_PGDN, KC_BSPC, KC_ENT
   ),
+  // Keypad Layer
   [1] = LAYOUT_ergodox_pretty(
-    KC_ESCAPE,      KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,
     // left hand                                                                                                                    // right hand
-    RGB_SLD,        UG_HUED,       UG_HUEU,       KC_TRNS,        KC_LBRC,        KC_RBRC,        M_BRACKET_IN_CBR,               M_BRACKET_OUT_CBR, KC_TRNS,       KC_NUM_LOCK,   KC_KP_SLASH,   KC_KP_ASTERISK,KC_KP_MINUS,    KC_TRNS,
+    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_LBRC,        KC_RBRC,        M_BRACKET_IN_CBR,               M_BRACKET_OUT_CBR, KC_TRNS,       KC_NUM_LOCK,   KC_KP_SLASH,   KC_KP_ASTERISK,KC_KP_MINUS,    KC_TRNS,
     KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        M_ARROW_REQL,   M_BRACKET_IN_PRN,               M_BRACKET_OUT_PRN, M_ARROW_LEQL,  KC_KP_7,       KC_KP_8,       KC_KP_9,       KC_KP_PLUS,     KC_TRNS,
     KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        M_ARROW_RMINUS,                                                               M_ARROW_LMINUS,   KC_KP_4,       KC_KP_5,       KC_KP_6,       KC_KP_PLUS,     KC_TRNS,
     KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        M_BRACKET_IN_ANG,M_BRACKET_IN_BRC,              M_BRACKET_OUT_BRC, M_BRACKET_OUT_ANG,KC_KP_1,      KC_KP_2,       KC_KP_3,       KC_KP_ENTER,    KC_TRNS,
@@ -40,6 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                      KC_TRNS,                      KC_TRNS,
                                 KC_TRNS,   KC_TRNS,  KC_TRNS,                      KC_TRNS,        KC_TRNS,       KC_TRNS
   ),
+  // Media Layer
   [2] = LAYOUT_ergodox_pretty(
     // left hand                                                   // right hand
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MUTE,  KC_TRNS, KC_F10,  KC_F11,  KC_F12,  KC_TRNS, KC_TRNS,
