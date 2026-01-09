@@ -31,10 +31,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Keypad Layer
   [1] = LAYOUT_ergodox_pretty(
     // left hand                                                                                                                    // right hand
-    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_LBRC,        KC_RBRC,        M_BRACKET_IN_CBR,               M_BRACKET_OUT_CBR, KC_TRNS,       KC_NUM_LOCK,   KC_KP_SLASH,   KC_KP_ASTERISK,KC_KP_MINUS,    KC_TRNS,
-    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        M_ARROW_REQL,   M_BRACKET_IN_PRN,               M_BRACKET_OUT_PRN, M_ARROW_LEQL,  KC_KP_7,       KC_KP_8,       KC_KP_9,       KC_KP_PLUS,     KC_TRNS,
-    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        M_ARROW_RMINUS,                                                               M_ARROW_LMINUS,   KC_KP_4,       KC_KP_5,       KC_KP_6,       KC_KP_PLUS,     KC_TRNS,
-    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        M_BRACKET_IN_ANG,M_BRACKET_IN_BRC,              M_BRACKET_OUT_BRC, M_BRACKET_OUT_ANG,KC_KP_1,      KC_KP_2,       KC_KP_3,       KC_KP_ENTER,    KC_TRNS,
+    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_LBRC,        KC_RBRC,        KC_TRNS,                         KC_TRNS,           KC_TRNS,       KC_NUM_LOCK,   KC_KP_SLASH,   KC_KP_ASTERISK,KC_KP_MINUS,    KC_TRNS,
+    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,                         KC_TRNS,           KC_TRNS,       KC_KP_7,       KC_KP_8,       KC_KP_9,       KC_KP_PLUS,     KC_TRNS,
+    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        KC_TRNS,                                                                 KC_TRNS,           KC_KP_4,       KC_KP_5,       KC_KP_6,       KC_KP_PLUS,     KC_TRNS,
+    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,                         KC_TRNS,           KC_TRNS,       KC_KP_1,       KC_KP_2,       KC_KP_3,       KC_KP_ENTER,    KC_TRNS,
     KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,                                                                                      KC_KP_0,        KC_TRNS,       KC_KP_DOT,     KC_KP_ENTER,   KC_TRNS,
 
                                            KC_TRNS,        KC_TRNS,                KC_TRNS,        KC_TRNS,
