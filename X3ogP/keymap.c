@@ -29,23 +29,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [1] = LAYOUT_ergodox_pretty(
     KC_ESCAPE,      KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,
-    KC_TRANSPARENT, KC_EXLM,        KC_AT,          KC_LCBR,        KC_RCBR,        KC_PIPE,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_UP,          KC_7,           KC_8,           KC_9,           KC_ASTR,        KC_F12,
-    KC_TRANSPARENT, KC_HASH,        KC_DLR,         KC_LPRN,        KC_RPRN,        KC_GRAVE,                                                                       KC_DOWN,        KC_4,           KC_5,           KC_6,           KC_PLUS,        KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_PERC,        KC_CIRC,        KC_LBRC,        KC_RBRC,        KC_TILD,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_AMPR,        KC_1,           KC_2,           KC_3,           KC_BSLS,        KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_EQUAL,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, KC_DOT,         KC_0,           KC_EQUAL,       KC_TRANSPARENT,
-                                                                                                    KC_TRANSPARENT, RGB_VAI,        KC_TRANSPARENT, RGB_SLD,
-                                                                                                                    HSV_86_255_128, TOGGLE_LAYER_COLOR,
-                                                                                    RGB_VAD,        HSV_172_255_255,HSV_27_255_255, KC_TRANSPARENT, RGB_HUD,        RGB_HUI
+    // left hand                                                                                                                    // right hand
+    RGB_SLD,        UG_HUED,       UG_HUEU,       KC_TRNS,        KC_LBRC,        KC_RBRC,        M_BRACKET_IN_CBR,               M_BRACKET_OUT_CBR, KC_TRNS,       KC_NUM_LOCK,   KC_KP_SLASH,   KC_KP_ASTERISK,KC_KP_MINUS,    KC_TRNS,
+    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        M_ARROW_REQL,   M_BRACKET_IN_PRN,               M_BRACKET_OUT_PRN, M_ARROW_LEQL,  KC_KP_7,       KC_KP_8,       KC_KP_9,       KC_KP_PLUS,     KC_TRNS,
+    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        M_ARROW_RMINUS,                                                               M_ARROW_LMINUS,   KC_KP_4,       KC_KP_5,       KC_KP_6,       KC_KP_PLUS,     KC_TRNS,
+    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        M_BRACKET_IN_ANG,M_BRACKET_IN_BRC,              M_BRACKET_OUT_BRC, M_BRACKET_OUT_ANG,KC_KP_1,      KC_KP_2,       KC_KP_3,       KC_KP_ENTER,    KC_TRNS,
+    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,                                                                                      KC_KP_0,        KC_TRNS,       KC_KP_DOT,     KC_KP_ENTER,   KC_TRNS,
+
+                                           KC_TRNS,        KC_TRNS,                KC_TRNS,        KC_TRNS,
+                                                     KC_TRNS,                      KC_TRNS,
+                                KC_TRNS,   KC_TRNS,  KC_TRNS,                      KC_TRNS,        KC_TRNS,       KC_TRNS
   ),
   [2] = LAYOUT_ergodox_pretty(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, QK_BOOT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_UP,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_TRANSPARENT,                                                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_MEDIA_PLAY_PAUSE,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_MEDIA_PREV_TRACK,KC_MEDIA_NEXT_TRACK,KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_BTN1,     KC_MS_BTN2,                                                                                                     KC_AUDIO_VOL_UP,KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                                    KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_WWW_BACK
+    // left hand                                                   // right hand
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MUTE,  KC_TRNS, KC_F10,  KC_F11,  KC_F12,  KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, MS_UP,   KC_TRNS, KC_TRNS, KC_TRNS, KC_VOLU,  KC_TRNS, KC_F7,   KC_F8,   KC_F9,   KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, MS_LEFT, MS_DOWN, MS_RGHT, KC_TRNS,          KC_TRNS,  KC_F4,   KC_F5,   KC_F6,   KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, MS_BTN2, MS_BTN3, MS_BTN1, KC_TRNS, KC_TRNS, KC_VOLD,  KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+
+                                           KC_TRNS, KC_TRNS, KC_MRWD, KC_MFFD,
+                                                     KC_TRNS, KC_MPRV,
+                               KC_TRNS,   KC_TRNS, KC_TRNS,  KC_MNXT, KC_TRNS, KC_MPLY
   ),
 };
 
