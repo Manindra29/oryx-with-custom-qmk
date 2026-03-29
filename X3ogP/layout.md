@@ -15,7 +15,7 @@ LEFT HAND                                                         RIGHT HAND
 |------+------+------+------+------+------| [    |   |  ]   |------+------+------+------+------+------|
 |Shift |  Z   |  X   |  C   |  V   |  B   |      |   |      |  N   |  M   |  ,   |  .   |  /   |Shift |
 `------+------+------+------+------+-------------'   `-------------+------+------+------+------+------'
-  | F20 | Ctrl | Alt  | Cmd  |Hyper |                               | Left | Down |  Up  |Right | Del  |
+  | Ctrl | Alt  | Cmd  | F20  |Hyper |                               | Left | Down |  Up  |Right | Del  |
   `------+------+------+------+------'                               `------+------+------+------+------'
                                        ,------+------.   ,------+------.
                                        |Cmd+C |Cmd+V |   | Home | End  |
@@ -76,7 +76,7 @@ LEFT HAND                                                         RIGHT HAND
 
 ## Notes
 
-- **F20** (bottom-left) acts as macOS Globe/Fn via Karabiner-Elements remap
+- **F20** (between Cmd and Hyper) acts as macOS Globe/Fn via Karabiner-Elements remap
 - **Hyper** = Ctrl+Shift+Alt+Cmd (all modifiers)
 - **TT(1)** = tap-toggle to Keypad layer
 - **TT(2)** = tap-toggle to Media layer

@@ -65,7 +65,7 @@ This runs the GitHub Action sequentially for each board, waits for each to compl
 
 ## macOS Globe/Fn key via Karabiner-Elements
 
-QMK doesn't natively support the macOS Globe/Fn key (Apple checks the keyboard's VID/PID). As a workaround, the bottom-left row is configured to send `KC_F20` in place of the Fn key, matching the Mac modifier order: **Fn, Ctrl, Alt, Cmd**.
+QMK doesn't natively support the macOS Globe/Fn key (Apple checks the keyboard's VID/PID). As a workaround, `KC_F20` is placed between Cmd and Hyper on the bottom-left row: **Ctrl, Alt, Cmd, F20, Hyper**.
 
 To complete the setup in [Karabiner-Elements](https://karabiner-elements.pqrs.org/):
 
