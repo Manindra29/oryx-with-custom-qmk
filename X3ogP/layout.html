@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ErgoDox EZ Layout — X3ogP</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', system-ui, sans-serif; background: #f5f5f7; color: #333; padding: 40px 20px; }
+  h1 { text-align: center; font-size: 1.4rem; font-weight: 500; margin-bottom: 8px; color: #222; }
+  .subtitle { text-align: center; font-size: 0.8rem; color: #999; margin-bottom: 40px; }
+  .layer { margin-bottom: 48px; }
+  .layer-title { font-size: 1rem; font-weight: 600; margin-bottom: 16px; padding-left: 4px; color: #555; border-left: 3px solid var(--accent); padding-left: 12px; }
+  .hands { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+  .hand { display: grid; gap: 4px; }
+  .key {
+    display: flex; align-items: center; justify-content: center;
+    background: #fff; border: 1px solid #d0d0d0; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    font-size: 0.7rem; font-weight: 500; color: #333;
+    min-width: 52px; height: 42px; padding: 2px 4px; text-align: center;
+    transition: background 0.15s;
+  }
+  .key:hover { background: #eef; }
+  .key.transparent { background: #f0f0f0; border-color: #e0e0e0; color: #bbb; }
+  .key.modifier { background: #e8f0f8; border-color: #b0cfe0; color: #2a6a8a; }
+  .key.layer-key { background: #f0e8f8; border-color: #ceb0e0; color: #6a2a8a; }
+  .key.special { background: #e8f8f0; border-color: #b0e0ce; color: #2a7a5a; }
+  .key.fn-key { background: #f8f0e8; border-color: #e0ceb0; color: #8a6a2a; }
+  .thumb-cluster { display: grid; gap: 4px; margin-top: 4px; }
+
+  /* Left hand grid */
+  .left .main { display: grid; grid-template-columns: repeat(7, 52px); gap: 4px; }
+  .left .bottom-row { display: grid; grid-template-columns: repeat(5, 52px); gap: 4px; }
+  .left .thumb-cluster { justify-items: end; }
+  .left .thumb-top { display: grid; grid-template-columns: repeat(2, 52px); gap: 4px; margin-left: auto; }
+  .left .thumb-main { display: grid; grid-template-columns: repeat(3, 52px); gap: 4px; margin-left: auto; }
+
+  /* Right hand grid */
+  .right .main { display: grid; grid-template-columns: repeat(7, 52px); gap: 4px; }
+  .right .bottom-row { display: grid; grid-template-columns: repeat(5, 52px); gap: 4px; margin-left: auto; }
+  .right .thumb-top { display: grid; grid-template-columns: repeat(2, 52px); gap: 4px; }
+  .right .thumb-main { display: grid; grid-template-columns: repeat(3, 52px); gap: 4px; }
+
+  .hand-label { font-size: 0.65rem; color: #999; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .notes { max-width: 700px; margin: 0 auto; font-size: 0.75rem; color: #777; line-height: 1.8; }
+  .notes strong { color: #444; }
+  .notes ul { list-style: none; padding: 0; }
+  .notes li::before { content: "· "; color: #555; }
+
+  .l0 { --accent: #5a8; }
+  .l1 { --accent: #85a; }
+  .l2 { --accent: #a85; }
+</style>
+</head>
+<body>
+
+<h1>ErgoDox EZ — X3ogP</h1>
+<p class="subtitle">ErgoDox EZ STM32 &middot; 3 Layers</p>
+
+<!-- Layer 0: Base -->
+<div class="layer l0">
+<div class="layer-title">Layer 0 — Base (QWERTY)</div>
+<div class="hands">
+  <div class="hand left">
+    <div class="hand-label">Left</div>
+    <div class="main">
+      <div class="key">`</div><div class="key">1</div><div class="key">2</div><div class="key">3</div><div class="key">4</div><div class="key">5</div><div class="key">-</div>
+      <div class="key modifier">Tab</div><div class="key">Q</div><div class="key">W</div><div class="key">E</div><div class="key">R</div><div class="key">T</div><div class="key">(</div>
+      <div class="key modifier">Esc</div><div class="key">A</div><div class="key">S</div><div class="key">D</div><div class="key">F</div><div class="key">G</div><div class="key transparent"></div>
+      <div class="key modifier">Shift</div><div class="key">Z</div><div class="key">X</div><div class="key">C</div><div class="key">V</div><div class="key">B</div><div class="key">[</div>
+    </div>
+    <div class="bottom-row">
+      <div class="key fn-key">Fn<sup>F20</sup></div><div class="key modifier">Ctrl</div><div class="key modifier">Alt</div><div class="key modifier">Cmd</div><div class="key modifier">Hyper</div>
+    </div>
+    <div class="thumb-cluster">
+      <div class="thumb-top">
+        <div class="key special">⌘C</div><div class="key special">⌘V</div>
+      </div>
+      <div class="thumb-main">
+        <div class="key" style="grid-row: span 2;">Spc</div><div class="key modifier" style="grid-row: span 2;">Cmd</div><div class="key layer-key">TT(1)</div>
+        <div class="key layer-key">TT(2)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hand right">
+    <div class="hand-label">Right</div>
+    <div class="main">
+      <div class="key">=</div><div class="key">6</div><div class="key">7</div><div class="key">8</div><div class="key">9</div><div class="key">0</div><div class="key special">Bksp</div>
+      <div class="key">)</div><div class="key">Y</div><div class="key">U</div><div class="key">I</div><div class="key">O</div><div class="key">P</div><div class="key">\</div>
+      <div class="key transparent"></div><div class="key">H</div><div class="key">J</div><div class="key">K</div><div class="key">L</div><div class="key">;</div><div class="key">'</div>
+      <div class="key">]</div><div class="key">N</div><div class="key">M</div><div class="key">,</div><div class="key">.</div><div class="key">/</div><div class="key modifier">Shift</div>
+    </div>
+    <div class="bottom-row">
+      <div class="key special">←</div><div class="key special">↓</div><div class="key special">↑</div><div class="key special">→</div><div class="key special">Del</div>
+    </div>
+    <div class="thumb-cluster">
+      <div class="thumb-top">
+        <div class="key special">Home</div><div class="key special">End</div>
+      </div>
+      <div class="thumb-main">
+        <div class="key special">PgUp</div><div class="key special" style="grid-row: span 2;">Bksp</div><div class="key" style="grid-row: span 2;">Enter</div>
+        <div class="key special">PgDn</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Layer 1: Keypad -->
+<div class="layer l1">
+<div class="layer-title">Layer 1 — Keypad</div>
+<div class="hands">
+  <div class="hand left">
+    <div class="hand-label">Left</div>
+    <div class="main">
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key">[</div><div class="key">]</div><div class="key transparent">__</div>
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div>
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent"></div>
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div>
+    </div>
+    <div class="bottom-row">
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div>
+    </div>
+    <div class="thumb-cluster">
+      <div class="thumb-top">
+        <div class="key transparent">__</div><div class="key transparent">__</div>
+      </div>
+      <div class="thumb-main">
+        <div class="key transparent" style="grid-row: span 2;">__</div><div class="key transparent" style="grid-row: span 2;">__</div><div class="key transparent">__</div>
+        <div class="key transparent">__</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hand right">
+    <div class="hand-label">Right</div>
+    <div class="main">
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key special">NumLk</div><div class="key">/</div><div class="key">*</div><div class="key">-</div><div class="key transparent">__</div>
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key">7</div><div class="key">8</div><div class="key">9</div><div class="key">+</div><div class="key transparent">__</div>
+      <div class="key transparent"></div><div class="key transparent">__</div><div class="key">4</div><div class="key">5</div><div class="key">6</div><div class="key">+</div><div class="key transparent">__</div>
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key">1</div><div class="key">2</div><div class="key">3</div><div class="key special">Enter</div><div class="key transparent">__</div>
+    </div>
+    <div class="bottom-row">
+      <div class="key">0</div><div class="key transparent">__</div><div class="key">.</div><div class="key special">Enter</div><div class="key transparent">__</div>
+    </div>
+    <div class="thumb-cluster">
+      <div class="thumb-top">
+        <div class="key transparent">__</div><div class="key transparent">__</div>
+      </div>
+      <div class="thumb-main">
+        <div class="key transparent">__</div><div class="key transparent" style="grid-row: span 2;">__</div><div class="key transparent" style="grid-row: span 2;">__</div>
+        <div class="key transparent">__</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Layer 2: Media -->
+<div class="layer l2">
+<div class="layer-title">Layer 2 — Media + F-Keys + Mouse</div>
+<div class="hands">
+  <div class="hand left">
+    <div class="hand-label">Left</div>
+    <div class="main">
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div>
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key special">Ms↑</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div>
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key special">Ms←</div><div class="key special">Ms↓</div><div class="key special">Ms→</div><div class="key transparent">__</div><div class="key transparent"></div>
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key special">RClk</div><div class="key special">MClk</div><div class="key special">LClk</div><div class="key transparent">__</div><div class="key transparent">__</div>
+    </div>
+    <div class="bottom-row">
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div>
+    </div>
+    <div class="thumb-cluster">
+      <div class="thumb-top">
+        <div class="key transparent">__</div><div class="key transparent">__</div>
+      </div>
+      <div class="thumb-main">
+        <div class="key transparent" style="grid-row: span 2;">__</div><div class="key transparent" style="grid-row: span 2;">__</div><div class="key transparent">__</div>
+        <div class="key transparent">__</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hand right">
+    <div class="hand-label">Right</div>
+    <div class="main">
+      <div class="key special">Mute</div><div class="key transparent">__</div><div class="key fn-key">F10</div><div class="key fn-key">F11</div><div class="key fn-key">F12</div><div class="key transparent">__</div><div class="key transparent">__</div>
+      <div class="key special">Vol+</div><div class="key transparent">__</div><div class="key fn-key">F7</div><div class="key fn-key">F8</div><div class="key fn-key">F9</div><div class="key transparent">__</div><div class="key transparent">__</div>
+      <div class="key transparent"></div><div class="key transparent">__</div><div class="key fn-key">F4</div><div class="key fn-key">F5</div><div class="key fn-key">F6</div><div class="key transparent">__</div><div class="key transparent">__</div>
+      <div class="key special">Vol-</div><div class="key transparent">__</div><div class="key fn-key">F1</div><div class="key fn-key">F2</div><div class="key fn-key">F3</div><div class="key transparent">__</div><div class="key transparent">__</div>
+    </div>
+    <div class="bottom-row">
+      <div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div><div class="key transparent">__</div>
+    </div>
+    <div class="thumb-cluster">
+      <div class="thumb-top">
+        <div class="key special">Rwnd</div><div class="key special">Ffwd</div>
+      </div>
+      <div class="thumb-main">
+        <div class="key special">Prev</div><div class="key transparent" style="grid-row: span 2;">__</div><div class="key special" style="grid-row: span 2;">Play</div>
+        <div class="key special">Next</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="notes">
+  <ul>
+    <li><strong>F20</strong> (bottom-left) acts as macOS Globe/Fn via Karabiner-Elements</li>
+    <li><strong>Hyper</strong> = Ctrl + Shift + Alt + Cmd</li>
+    <li><strong>TT(1)</strong> = tap-toggle to Keypad layer</li>
+    <li><strong>TT(2)</strong> = tap-toggle to Media layer</li>
+    <li><strong>LED indicators</strong>: Layer 1 = LED 1, Layer 2 = LED 2</li>
+    <li><strong>__</strong> = transparent (inherits from base layer)</li>
+  </ul>
+</div>
+
+</body>
+</html>
