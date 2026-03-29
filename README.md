@@ -32,6 +32,29 @@ Each time you run the GitHub Action, the workflow will:
 7. Flash your downloaded firmware using [Keymapp](https://www.zsa.io/flash#flash-keymap).
 8. Enjoy!
 
+## macOS Globe/Fn key via Karabiner-Elements
+
+QMK doesn't natively support the macOS Globe/Fn key (Apple checks the keyboard's VID/PID). As a workaround, the bottom-left row is configured to send `KC_F20` in place of the Fn key, matching the Mac modifier order: **Fn, Ctrl, Alt, Cmd**.
+
+To complete the setup in [Karabiner-Elements](https://karabiner-elements.pqrs.org/):
+
+1. Install Karabiner-Elements if you haven't: `brew install --cask karabiner-elements`
+2. Open Karabiner-Elements and grant the required accessibility permissions when prompted.
+3. Go to **Settings** > **Simple Modifications**.
+4. Select your ErgoDox from the **Target device** dropdown.
+5. Click **Add item**, set **From key** to `F20` and **To key** to `fn (globe)`.
+
+Alternatively, you can add the rule directly to your `karabiner.json` (usually at `~/.config/karabiner/karabiner.json`). Add this to the `simple_modifications` array for your ErgoDox profile:
+
+```json
+{
+  "from": { "key_code": "f20" },
+  "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+}
+```
+
+You can verify it's working by opening Karabiner-EventViewer and pressing the key — it should show `fn` instead of `F20`.
+
 ## Oryx Chrome extension
 
 To make building even easier, [@nivekmai](https://github.com/nivekmai) created an [Oryx Chrome extension](https://chromewebstore.google.com/detail/oryx-extension/bocjciklgnhkejkdfilcikhjfbmbcjal) to be able to trigger the GitHub Actions from inside Oryx itself.
