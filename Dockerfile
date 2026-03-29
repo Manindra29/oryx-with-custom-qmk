@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y \
     gcc-arm-none-eabi \
     libnewlib-arm-none-eabi \
     avrdude \
-    dfu-util
+    dfu-util \
+    gcc-avr \
+    avr-libc
 
 RUN python3 -m pip install qmk appdirs --break-system-packages
 

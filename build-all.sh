@@ -8,7 +8,9 @@ gh workflow run "Fetch and build layout" --repo $REPO -f layout_geometry=ergodox
 
 echo "Waiting for workflow to register..."
 sleep 15
-gh run watch --repo $REPO --exit-status
+ST_RUN_ID=$(gh run list --repo $REPO --limit 1 --json databaseId --jq '.[0].databaseId')
+echo "Watching run $ST_RUN_ID..."
+gh run watch --repo $REPO --exit-status $ST_RUN_ID
 
 if [ $? -eq 0 ]; then
   echo "Downloading ST firmware..."
@@ -25,7 +27,9 @@ gh workflow run "Fetch and build layout" --repo $REPO -f layout_geometry=ergodox
 
 echo "Waiting for workflow to register..."
 sleep 15
-gh run watch --repo $REPO --exit-status
+TEENSY_RUN_ID=$(gh run list --repo $REPO --limit 1 --json databaseId --jq '.[0].databaseId')
+echo "Watching run $TEENSY_RUN_ID..."
+gh run watch --repo $REPO --exit-status $TEENSY_RUN_ID
 
 if [ $? -eq 0 ]; then
   echo "Downloading Teensy firmware..."
@@ -37,5 +41,5 @@ else
 fi
 
 echo "Both builds complete! Firmware downloaded:"
-echo "  Home (ST):     ergodox_ez_stm32_${LAYOUT}/"
+echo "  Home (ST):       ergodox_ez_stm32_${LAYOUT}/"
 echo "  Office (Teensy): ergodox_ez_${LAYOUT}/"
