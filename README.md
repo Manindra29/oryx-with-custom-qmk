@@ -47,7 +47,21 @@ Both boards share the same `keymap.c` source — only the build target differs. 
 ./build-all.sh
 ```
 
-This runs the GitHub Action sequentially for each board and waits for each to complete. You can also build for a single board by selecting the keyboard type when manually triggering the workflow.
+This runs the GitHub Action sequentially for each board, waits for each to complete, and downloads the firmware into local folders. You can also build for a single board by selecting the keyboard type when manually triggering the workflow.
+
+### Updating firmware on both boards
+
+1. Make your changes to `keymap.c` (or edit via Oryx).
+2. Commit and push to **main**.
+3. Run the build script:
+   ```bash
+   ./build-all.sh
+   ```
+4. Flash each board:
+   - **Home (ST)**: flash `ergodox_ez_stm32_X3ogP/zsa_ergodox_ez_stm32_base_X3ogP.bin` using [Keymapp](https://www.zsa.io/flash#flash-keymap)
+   - **Office (Teensy)**: flash `ergodox_ez_X3ogP/ergodox_ez_base_X3ogP.hex` using [Teensy Loader](https://www.pjrc.com/teensy/loader.html) (copies archived in `tools/teensy-loader/`)
+
+> **Note:** The two boards require different flashing tools. The newer ST board (2024) uses Keymapp with a `.bin` file. The older Teensy board (2019) uses Teensy Loader with a `.hex` file — open the app, load the `.hex`, press the reset button (paperclip in the hole at the top right of the board), then click download in Teensy Loader.
 
 ## macOS Globe/Fn key via Karabiner-Elements
 
