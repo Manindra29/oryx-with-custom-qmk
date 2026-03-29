@@ -32,6 +32,23 @@ Each time you run the GitHub Action, the workflow will:
 7. Flash your downloaded firmware using [Keymapp](https://www.zsa.io/flash#flash-keymap).
 8. Enjoy!
 
+## Two keyboards, one layout
+
+This repo targets two ErgoDox EZ boards with different hardware:
+
+| Board | Processor | Build target | Firmware | Location |
+|-------|-----------|-------------|----------|----------|
+| ErgoDox EZ (2019) | Teensy / ATmega32U4 | `ergodox_ez` | `.hex` | Office |
+| ErgoDox EZ ST (2024) | STM32 | `ergodox_ez/stm32` | `.bin` | Home |
+
+Both boards share the same `keymap.c` source — only the build target differs. To build firmware for both in one go:
+
+```bash
+./build-all.sh
+```
+
+This runs the GitHub Action sequentially for each board and waits for each to complete. You can also build for a single board by selecting the keyboard type when manually triggering the workflow.
+
 ## macOS Globe/Fn key via Karabiner-Elements
 
 QMK doesn't natively support the macOS Globe/Fn key (Apple checks the keyboard's VID/PID). As a workaround, the bottom-left row is configured to send `KC_F20` in place of the Fn key, matching the Mac modifier order: **Fn, Ctrl, Alt, Cmd**.
