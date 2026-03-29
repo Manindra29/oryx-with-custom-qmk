@@ -23,7 +23,9 @@ Both share the same `keymap.c` source. Different processors require separate fir
 
 ## Key Conventions
 
+
 - Edit `keymap.c`, `config.h`, and `rules.mk` for custom QMK features
+- When keymap.c is updated, update layout.md and layout.html, so the layout stays consistent.
 - Never edit `keymap.json` directly — it's overwritten by Oryx on each sync
 - Never edit files inside `qmk_firmware/` — it's a submodule managed by the workflow
 - Firmware is built via the "Fetch and build layout" GitHub Action

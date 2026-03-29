@@ -15,7 +15,7 @@ enum custom_keycodes {
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  // Base Layer
+  // Layer 0: Base (macOS)
   [0] = LAYOUT_ergodox_pretty(
     // left hand                                                   // right hand
     KC_GRAVE, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MINS, KC_EQL,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
@@ -25,21 +25,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL,  KC_LALT, KC_LGUI, KC_F20,  ALL_T(KC_NO),                      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_DEL,
 
                                            LGUI(KC_C), LGUI(KC_V), KC_HOME, KC_END,
-                                                     TT(1),        KC_PGUP,
-                               KC_SPC,    KC_LGUI,    TT(2),       KC_PGDN, KC_BSPC, KC_ENT
+                                                     DF(1),        KC_PGUP,
+                               KC_SPC,    KC_LGUI,    MO(2),       KC_PGDN, KC_BSPC, KC_ENT
   ),
-  // Keypad Layer
+  // Layer 1: Base (Windows) — sticky via DF()
   [1] = LAYOUT_ergodox_pretty(
-    // left hand                                                                                                                    // right hand
-    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_LBRC,        KC_RBRC,        KC_TRNS,                         KC_TRNS,           KC_TRNS,       KC_NUM_LOCK,   KC_KP_SLASH,   KC_KP_ASTERISK,KC_KP_MINUS,    KC_TRNS,
-    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,                         KC_TRNS,           KC_TRNS,       KC_KP_7,       KC_KP_8,       KC_KP_9,       KC_KP_PLUS,     KC_TRNS,
-    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        KC_TRNS,                                                                 KC_TRNS,           KC_KP_4,       KC_KP_5,       KC_KP_6,       KC_KP_PLUS,     KC_TRNS,
-    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,                         KC_TRNS,           KC_TRNS,       KC_KP_1,       KC_KP_2,       KC_KP_3,       KC_KP_ENTER,    KC_TRNS,
-    KC_TRNS,        KC_TRNS,       KC_TRNS,       KC_TRNS,        KC_TRNS,                                                                                      KC_KP_0,        KC_TRNS,       KC_KP_DOT,     KC_KP_ENTER,   KC_TRNS,
+    // left hand                                                   // right hand
+    KC_GRAVE, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MINS, KC_EQL,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+    KC_TAB,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_LPRN, KC_RPRN, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
+    KC_ESC,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+    KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC, KC_RBRC, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+    KC_LGUI,  KC_LALT, KC_LCTL, KC_F20,  ALL_T(KC_NO),                      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_DEL,
 
-                                           KC_TRNS,        KC_TRNS,                KC_TRNS,        KC_TRNS,
-                                                     KC_TRNS,                      KC_TRNS,
-                                KC_TRNS,   KC_TRNS,  KC_TRNS,                      KC_TRNS,        KC_TRNS,       KC_TRNS
+                                           LCTL(KC_C), LCTL(KC_V), KC_HOME, KC_END,
+                                                     DF(0),        KC_PGUP,
+                               KC_SPC,    KC_LCTL,    MO(2),       KC_PGDN, KC_BSPC, KC_ENT
   ),
   // Media Layer
   [2] = LAYOUT_ergodox_pretty(
@@ -87,42 +87,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-uint8_t layer_state_set_user(uint8_t state) {
-    uint8_t layer = biton(state);
+void update_leds(void) {
   ergodox_board_led_off();
   ergodox_right_led_1_off();
   ergodox_right_led_2_off();
   ergodox_right_led_3_off();
-  switch (layer) {
-    case 1:
-      ergodox_right_led_1_on();
-      break;
-    case 2:
-      ergodox_right_led_2_on();
-      break;
-    case 3:
-      ergodox_right_led_3_on();
-      break;
-    case 4:
-      ergodox_right_led_1_on();
-      ergodox_right_led_2_on();
-      break;
-    case 5:
-      ergodox_right_led_1_on();
-      ergodox_right_led_3_on();
-      break;
-    case 6:
-      ergodox_right_led_2_on();
-      ergodox_right_led_3_on();
-      break;
-    case 7:
-      ergodox_right_led_1_on();
-      ergodox_right_led_2_on();
-      ergodox_right_led_3_on();
-      break;
-    default:
-      break;
+
+  // LED 1: Windows default layer active
+  if (biton(default_layer_state) == 1) {
+    ergodox_right_led_1_on();
   }
+
+  // LED 2: Media layer active
+  if (layer_state_is(2)) {
+    ergodox_right_led_2_on();
+  }
+}
+
+layer_state_t default_layer_state_set_user(layer_state_t state) {
+  update_leds();
   return state;
-};
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+  update_leds();
+  return state;
+}
 

@@ -20,33 +20,33 @@ LEFT HAND                                                         RIGHT HAND
                                        ,------+------.   ,------+------.
                                        |Cmd+C |Cmd+V |   | Home | End  |
                                 ,------+------+------|   |------+------+------.
-                                |      |      |TT(1) |   | PgUp |      |      |
+                                |      |      |DF(1) |   | PgUp |      |      |
                                 | Spc  | Cmd  |------|   |------| Bksp |Enter |
-                                |      |      |TT(2) |   | PgDn |      |      |
+                                |      |      |MO(2) |   | PgDn |      |      |
                                 `------+------+------'   `------+------+------'
 ```
 
-## Layer 1: Keypad
+## Layer 1: Base (Windows) — sticky via DF()
 
 ```
 LEFT HAND                                                         RIGHT HAND
 ,------+------+------+------+------+------+------.   ,------+------+------+------+------+------+------.
-|  __  |  __  |  __  |  __  |  [   |  ]   |  __  |   |  __  |  __  |NumLk |  /   |  *   |  -   |  __  |
+|  `   |  1   |  2   |  3   |  4   |  5   |  -   |   |  =   |  6   |  7   |  8   |  9   |  0   | Bksp |
 |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
-|  __  |  __  |  __  |  __  |  __  |  __  |  __  |   |  __  |  __  |  7   |  8   |  9   |  +   |  __  |
+| Tab  |  Q   |  W   |  E   |  R   |  T   |  (   |   |  )   |  Y   |  U   |  I   |  O   |  P   |  \   |
 |------+------+------+------+------+------|      |   |      |------+------+------+------+------+------|
-|  __  |  __  |  __  |  __  |  __  |  __  |------|   |------|  __  |  4   |  5   |  6   |  +   |  __  |
-|------+------+------+------+------+------|  __  |   |  __  |------+------+------+------+------+------|
-|  __  |  __  |  __  |  __  |  __  |  __  |      |   |      |  __  |  1   |  2   |  3   |Enter |  __  |
+| Esc  |  A   |  S   |  D   |  F   |  G   |------|   |------|  H   |  J   |  K   |  L   |  ;   |  '   |
+|------+------+------+------+------+------| [    |   |  ]   |------+------+------+------+------+------|
+|Shift |  Z   |  X   |  C   |  V   |  B   |      |   |      |  N   |  M   |  ,   |  .   |  /   |Shift |
 `------+------+------+------+------+-------------'   `-------------+------+------+------+------+------'
-  |  __ |  __  |  __  |  __  |  __  |                               |  0   |  __  |  .   |Enter |  __  |
+  | Win  | Alt  | Ctrl | F20  |Hyper |                               | Left | Down |  Up  |Right | Del  |
   `------+------+------+------+------'                               `------+------+------+------+------'
                                        ,------+------.   ,------+------.
-                                       |  __  |  __  |   |  __  |  __  |
+                                       |Ctrl+C|Ctrl+V|   | Home | End  |
                                 ,------+------+------|   |------+------+------.
-                                |      |      |  __  |   |  __  |      |      |
-                                |  __  |  __  |------|   |------|  __  |  __  |
-                                |      |      |  __  |   |  __  |      |      |
+                                |      |      |DF(0) |   | PgUp |      |      |
+                                | Spc  | Ctrl |------|   |------| Bksp |Enter |
+                                |      |      |MO(2) |   | PgDn |      |      |
                                 `------+------+------'   `------+------+------'
 ```
 
@@ -76,8 +76,8 @@ LEFT HAND                                                         RIGHT HAND
 
 ## Notes
 
-- **F20** (between Cmd and Hyper) acts as macOS Globe/Fn via Karabiner-Elements remap
+- **F20** (between Cmd/Ctrl and Hyper) acts as macOS Globe/Fn via Karabiner-Elements remap
 - **Hyper** = Ctrl+Shift+Alt+Cmd (all modifiers)
-- **TT(1)** = tap-toggle to Keypad layer
-- **TT(2)** = tap-toggle to Media layer
-- **LED indicators**: Layer 1 = LED 1, Layer 2 = LED 2
+- **DF(1)** / **DF(0)** = switch default layer (sticky OS toggle between Mac and Windows)
+- **MO(2)** = momentary Media layer (hold to activate, works from either OS layer)
+- **LED indicators**: LED 1 = Windows mode active, LED 2 = Media layer active
